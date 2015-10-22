@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use Carbon\Carbon;
 
 class UserTableSeeder extends Seeder
 {
@@ -28,6 +29,8 @@ class UserTableSeeder extends Seeder
                 'had_feedback_email' => $faker->boolean,
                 'sync_name_bio' => $faker->boolean,
                 'bio' => $faker->sentence(100),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ]);
         }
     }
