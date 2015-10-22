@@ -17,7 +17,15 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password', 60);
+            $table->string('bio', 120);
             $table->rememberToken();
+            $table->boolean('location')->nullable();
+            $table->boolean('active');
+            $table->boolean('had_feedback_email');
+            $table->boolean('sync_name_bio');
+            $table->datetime('birthday');
+            $table->string('gender');
+            $table->integer('timezone');
             $table->timestamps();
         });
     }
