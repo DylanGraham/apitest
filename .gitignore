@@ -3,5 +3,4 @@
 Homestead.yaml
 .env
 .*.swp
-storage/database.sqlite
 build
