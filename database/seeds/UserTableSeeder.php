@@ -23,12 +23,13 @@ class UserTableSeeder extends Seeder
                 'email' => $faker->email,
                 'active' => $i === 0 ? true : $faker->boolean,
                 'gender' => $faker->randomElement(['male', 'female', 'other']),
+                // Do not store timezone as an integer, it should be IANA standard, eg: America/New_York
                 'timezone' => $faker->numberBetween(-10, 10),
                 'birthday' => $faker->dateTimeBetween('-40 years', '-18 years'),
                 'location' => $faker->boolean ? "{$faker->city}, {$faker->state}" : null,
                 'had_feedback_email' => $faker->boolean,
                 'sync_name_bio' => $faker->boolean,
-                'bio' => $faker->sentence(100),
+                'bio' => $faker->sentence(6),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
