@@ -16,6 +16,9 @@ class CreateClustersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
+
+            $table->integer('node_id')->unsigned();
+            $table->foreign('node_id')->references('id')->on('nodes');
         });
     }
 
